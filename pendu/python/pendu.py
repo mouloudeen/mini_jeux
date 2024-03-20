@@ -11,7 +11,7 @@ def cherche_mot(mot,taille,essaies):
     while mot_trouve.upper() != mot.upper() and cpt < essaies:
         
         listPendu.hommePendu(cpt)
-        print(f"donner une lettre ou le mot , il vous reste {essaies-cpt} erreurs possibles")
+        print(f"donner une lettre ou le mot exacte , il vous reste {essaies-cpt} erreurs possibles")
         
 
         n = input()
