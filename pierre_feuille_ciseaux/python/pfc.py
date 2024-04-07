@@ -46,28 +46,41 @@ def pfc(maxPoint):
     pointPlayer1 = 0
     pointPlayer2 = 0
 
-    liste = ("pierre", "feuille", "ciseau")
+    liste = ("la pierre", "la feuille", "le ciseau")
     while pointPlayer1 < maxPoint and pointPlayer2 < maxPoint:
         cpt1 = player1()
         print(f" joueur 1 a joué {liste[cpt1-1]}\n")
         cpt2 = player2()
         print(f" joueur 2 a joué {liste[cpt2-1]}\n")
-        if cpt1 == 3 and cpt2 == 1:
-            pointPlayer2 += 1
-        elif cpt1 == 1 and cpt2 == 3:
-            pointPlayer1 += 1
-        elif cpt1  > cpt2:
-            pointPlayer1 += 1
-        elif cpt1  == cpt2:
-            print(f"player1 : { pointPlayer1}  player2 : { pointPlayer2}")
-            continue
-        else :
-            pointPlayer2 += 1
-
-        print(f"player1 : { pointPlayer1}  player2 : { pointPlayer2}")
-
+        
+        cpt = cpt1 - cpt2
+        
+        match(cpt):
+            case -2:
+                print(f"{liste[cpt1-1]} a gagné contre {liste[cpt2-1]}\n")
+                pointPlayer1 += 1
+            case -1:
+                print(f"{liste[cpt1-1]} a perdu contre {liste[cpt2-1]}\n")
+                pointPlayer2 += 1
+            case 0:
+                print(f"les 2 joueurs ont joués {liste[cpt1-1]}\n")
+                print(f"player1 : { pointPlayer1}  player2 : { pointPlayer2}\n")
+                continue
+            case 1:
+                print(f"{liste[cpt1-1]} a gagné contre {liste[cpt2-1]}\n")
+                pointPlayer1 += 1
+            case 2:
+                print(f"{liste[cpt1-1]} a perdu contre {liste[cpt2-1]}\n")
+                pointPlayer2 += 1
+        
+        
+        print(f"player1 : { pointPlayer1}  player2 : { pointPlayer2}\n")
     if pointPlayer1 > pointPlayer2:
         print("joueur 1 a gagné")
 
     else:
          print("joueur 2 a gagné")
+
+
+
+
