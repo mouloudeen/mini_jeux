@@ -58,7 +58,7 @@ int choix_joueur(char player){
     return jeuPlayer;
     
 }
-/*voir le probleme sur humanPlayer et sur switch*/
+
 /* Pierre Feuille Ciseau*/
 void pfc(int maxPoint){
     char player1, player2;
@@ -101,7 +101,7 @@ void pfc(int maxPoint){
             case 0:
                
                 printf("Les 2 joueurs ont joués %s\n", liste[jeuPlayer1 -1]);
-                printf("Player1 : %d player2 : %d\n", pointPlayer1, pointPlayer2);
+               
                 break;
             
             case 1:
