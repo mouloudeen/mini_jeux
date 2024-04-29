@@ -5,7 +5,7 @@ def randomPlayer():
     print("donner le chiffre entre 1 et 3 1:pierre 2: feuille 3:ciseau")
     return random.randint(1,3)
 
-# jeu de l'humain
+# jeu avec l'humain
 def humanPlayer():
     print("donner le chiffre entre 1 et 3 1:pierre 2: feuille 3:ciseau")
     n = input()
