@@ -1,0 +1,2 @@
+import nombreMystere
+nombreMystere.nombreSecret()
