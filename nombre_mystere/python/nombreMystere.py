@@ -71,7 +71,13 @@ def nombreSecret():
     else :
         print(f"Bravo vous avez trouvé le bon nombre {NombreMystere} avec {cpt} essaie(s)")
 
-
+    print("voulez-vous recommencer ?(oui/non)")
+    n = input()
+    
+    if (n=="oui"):
+        nombreSecret()
+    else:
+        print("au revoir à bientot")
 
 
 
