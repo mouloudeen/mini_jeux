@@ -24,8 +24,20 @@ def searchNumberHuman(mini,maxi):
     n = input()
     if int(n) < mini or int(n) > maxi:
         n = searchNumberHuman(mini,maxi)
-    return n
+    return int(n)
 
+# random cherche le nombre secret
+def searchNumberRandom(mini,maxi):
+    n = random.randint(mini,maxi)
+    print(f"{n}")
+    return n
+    
+#ordi cherche le nombre secret:
+def searchNumberPC(mini,maxi):
+    n = int((mini+maxi)/2)
+    print(f"{n}")
+    return n
+    
 #choix du premier joueur
 def ChoixJoueur1(mini,maxi):
     print("Choisir entre l'ordinateur' et le joueur humain pour donner le nombre mystère (o/h)")
@@ -34,6 +46,8 @@ def ChoixJoueur1(mini,maxi):
         ChoixJoueur1(mini,maxi)
     
     match(n):
+        
+            
         case 'o':
             return chooseRandomNumber(mini,maxi)
         
@@ -41,6 +55,24 @@ def ChoixJoueur1(mini,maxi):
             return int(chooseHumanNumber(mini,maxi))
         
 
+#choix du deuxieme joueur
+def ChoixJoueur2():
+    print("choisir le random, ordinateur et le joueur humain pour rechercher le nombre mystere(r/o/h)")
+    
+    n = input()
+    if n!= 'o' and n != 'h' and n != 'r':
+        ChoixJoueur2()
+    
+    match(n):
+        case 'r':
+            return searchNumberRandom
+            
+        case 'o':
+            return searchNumberPC
+        
+        case 'h':
+            return searchNumberHuman
+            
 # le jeu du nombre secret
 def nombreSecret():
     print("choisir le minimum")
@@ -54,23 +86,33 @@ def nombreSecret():
     NombreMystere = ChoixJoueur1(mini,maxi)
     
     cpt = 0
-    Nombre = int(searchNumberHuman(mini,maxi))
-    
+    op = '>'
+    Joueur2 = ChoixJoueur2()
+    Nombre = Joueur2(mini,maxi)
+   
     while NombreMystere != Nombre and cpt != 10:
         
         if NombreMystere > Nombre:
+            
             print("Plus grand")
+            mini = Nombre
             cpt += 1
         else:
+            
             print("Pus petit")
+            maxi = Nombre
             cpt += 1
-        Nombre = int(searchNumberHuman(mini,maxi))
+        Nombre = Joueur2(mini,maxi)
+    
     if NombreMystere != Nombre:
+        
         print(f"le nombre qu'il fallait trouver {NombreMystere}")
     
     else :
+        
         print(f"Bravo vous avez trouvé le bon nombre {NombreMystere} avec {cpt} essaie(s)")
-
+    
+    #recommencer la partie
     print("voulez-vous recommencer ?(oui/non)")
     n = input()
     
