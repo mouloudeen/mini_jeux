@@ -39,3 +39,10 @@ int searchNumberRandom(int mini,int maxi){
     printf("nombre = %d\n", nombre);
     return nombre;
 }
+
+/* ordi cherche le nombre secret*/
+int searchNumberPC(int mini,int maxi){
+    int nombre = (maxi+mini)/2;
+    printf("nombre = %d\n", nombre);
+    return nombre;
+}
