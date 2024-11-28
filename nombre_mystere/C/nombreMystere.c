@@ -46,3 +46,4 @@ int searchNumberPC(int mini,int maxi){
     printf("nombre = %d\n", nombre);
     return nombre;
 }
+/* on va essayer de faire le programme avec les conditions sur mini et maxi pour les 5 fonctions*/
