@@ -86,7 +86,7 @@ def nombreSecret():
     NombreMystere = ChoixJoueur1(mini,maxi)
     
     cpt = 0
-    op = '>'
+    
     Joueur2 = ChoixJoueur2()
     Nombre = Joueur2(mini,maxi)
    
