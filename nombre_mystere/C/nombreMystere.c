@@ -19,3 +19,13 @@ int chooseHumanNumber(int mini, int maxi){
     return secret;
     
 }
+
+/* l'humain cherche le nombre secret*/
+int searchNumberHuman(int mini,int maxi){
+    
+    int nombre;
+    printf("le nombre à chercher est entre %d et %d\n",mini, maxi);
+    scanf("%d",&nombre);
+    printf("le nombre de recherche = %d\n",nombre);
+    return nombre;
+}
