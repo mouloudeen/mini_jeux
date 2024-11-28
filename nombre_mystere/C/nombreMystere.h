@@ -16,6 +16,9 @@ int chooseHumanNumber(int mini, int maxi);
 /* l'humain cherche le nombre secret*/
 int searchNumberHuman(int mini,int maxi);
 
+/* random cherche le nombre secret*/
+int searchNumberRandom(int mini,int maxi);
+
 #endif /* nombreMystere */
 
 

@@ -29,3 +29,13 @@ int searchNumberHuman(int mini,int maxi){
     printf("le nombre de recherche = %d\n",nombre);
     return nombre;
 }
+
+/* random cherche le nombre secret*/
+int searchNumberRandom(int mini,int maxi){
+    
+    srand(time(NULL));
+    
+    int nombre = rand()%(maxi-mini)+mini;
+    printf("nombre = %d\n", nombre);
+    return nombre;
+}
