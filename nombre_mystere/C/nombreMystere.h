@@ -6,6 +6,7 @@
 #include<ctype.h>
 #include <string.h>
 #include <time.h>
+#include <stdbool.h>
 
 /* Choix du nombre au hasard entre mini et maxi*/
 int chooseRandomNumber(int, int);

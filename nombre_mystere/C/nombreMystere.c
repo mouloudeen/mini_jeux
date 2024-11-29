@@ -11,10 +11,19 @@ int chooseRandomNumber(int mini, int maxi){
 
 /* choix par un humain entre mini et maxi*/
 int chooseHumanNumber(int mini, int maxi){
-    
+    bool rep = false;
     int secret;
-    printf("Choisir un nombre entre %d et %d\n", mini, maxi);
-    scanf("%d",&secret);
+    
+    
+    while (rep == false){
+        
+        printf("Choisir un nombre entre %d et %d\n", mini, maxi);
+        scanf("%d",&secret);
+        if ((secret >= mini) && (secret <= maxi)){
+            rep = true;
+        }
+    }
+    
     printf("secret = %d\n", secret);
     return secret;
     
@@ -23,9 +32,18 @@ int chooseHumanNumber(int mini, int maxi){
 /* l'humain cherche le nombre secret*/
 int searchNumberHuman(int mini,int maxi){
     
+    bool rep = false;
     int nombre;
-    printf("le nombre à chercher est entre %d et %d\n",mini, maxi);
-    scanf("%d",&nombre);
+    
+    while (rep == false){
+        
+        printf("le nombre à chercher est entre %d et %d\n",mini, maxi);
+        scanf("%d",&nombre);
+        if ((nombre >= mini) && (nombre <= maxi)){
+            rep = true;
+        }
+       
+    }
     printf("le nombre de recherche = %d\n",nombre);
     return nombre;
 }
