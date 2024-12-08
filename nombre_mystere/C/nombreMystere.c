@@ -64,4 +64,27 @@ int searchNumberPC(int mini,int maxi){
     printf("nombre = %d\n", nombre);
     return nombre;
 }
-/* on va essayer de faire le programme avec les conditions sur mini et maxi pour les 5 fonctions*/
+
+/* choix du premier joueur*/
+int Playerchoose(int mini, int maxi){
+    char choix;
+    bool rep = false;
+    
+    while(rep == false){
+        printf("Choisir entre l'ordinateur' et le joueur humain pour donner le nombre mystère (o/h)\n");
+        scanf("%c",&choix);
+        
+        if ((choix == 'o') || (choix == 'h') ){
+            rep = true;
+        }
+    }
+    switch (choix){
+        case 'o':
+            return chooseRandomNumber(mini,maxi);
+            break;
+        
+        case 'h':
+            return chooseHumanNumber(mini,maxi);
+            break;
+    }
+}

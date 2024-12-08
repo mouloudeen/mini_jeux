@@ -6,5 +6,6 @@ int main(){
     searchNumberHuman(1,100);
     searchNumberRandom(1,100);
     searchNumberPC(1,1001);
+    Playerchoose(1,100);
     return 0;
 }
