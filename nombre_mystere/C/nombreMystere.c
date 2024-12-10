@@ -118,49 +118,49 @@ void NombreSecret(){
     }
     
     int search = 0;
-    int cpt = 10;
+    int cpt = 0;
     switch(choose){
         case 'r':
             
-            while(( NombreMystere != search) && (cpt > 0)){
+            while(( NombreMystere != search) && (cpt < 10)){
                 search = searchNumberRandom(mini,maxi);
                 if (search > NombreMystere){
                     maxi = search;
-                    cpt -= 1;
+                    cpt += 1;
                 }
                 if (search < NombreMystere){
                     mini = search;
-                    cpt -= 1;
+                    cpt += 1;
                 }
             }
                   break;
                   
       case 'o':
           
-          while(( NombreMystere != search) || (cpt ==0)){
+          while(( NombreMystere != search) && (cpt < 10)){
               search = searchNumberPC(mini,maxi);
               if (search > NombreMystere){
                   maxi = search;
-                  cpt -= 1;
+                  cpt += 1;
               }
               if (search < NombreMystere){
                   mini = search;
-                  cpt -= 1;
+                  cpt += 1;
               }
           }
                 break;
                 
     case 'h':
         
-        while(( NombreMystere != search) || (cpt ==0)){
-            search = searchNumberPC(mini,maxi);
+        while(( NombreMystere != search) && (cpt  < 10)){
+            search = searchNumberHuman(mini,maxi);
             if (search > NombreMystere){
                 printf("plus petit\n");
-                cpt -= 1;
+                cpt += 1;
             }
             if (search < NombreMystere){
                 printf("plus grand\n");
-                cpt -= 1;
+                cpt += 1;
             }
         }
               break;
@@ -168,12 +168,12 @@ void NombreSecret(){
             
     }
     
-              if (cpt == 0){
+              if (cpt == 9){
                 printf("Vous avez perdu, le nombre mystere est : %d\n",NombreMystere);
             }
             
               else{
-                printf("Vous avez gagné en %d essaies\n",10 - cpt);
+                printf("Vous avez gagné en %d essaies\n",cpt+1);
             }
         
     }
