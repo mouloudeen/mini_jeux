@@ -88,3 +88,94 @@ int Playerchoose(int mini, int maxi){
             break;
     }
 }
+
+/* le jeu du nombre secret*/
+void NombreSecret(){
+    int mini, maxi;
+    
+    
+    printf("choisir le minimum\n");
+    scanf("%d",&mini);
+    
+    
+    printf("choisir le maximum\n");
+    scanf("%d",&maxi);
+    
+    int NombreMystere = Playerchoose(mini,maxi);
+    
+    bool rep = false;
+    char choose;
+    while (rep == false){
+        
+        printf("choisir le random, ordinateur et le joueur humain pour rechercher le nombre mystere(r/o/h)\n");
+        scanf(" %c",&choose);
+        printf("choose = %c\n",choose);
+        
+        if ((choose == 'r') || (choose == 'o') || (choose == 'h')){
+            rep = true;
+        }
+        
+    }
+    
+    int search = 0;
+    int cpt = 10;
+    switch(choose){
+        case 'r':
+            
+            while(( NombreMystere != search) && (cpt > 0)){
+                search = searchNumberRandom(mini,maxi);
+                if (search > NombreMystere){
+                    maxi = search;
+                    cpt -= 1;
+                }
+                if (search < NombreMystere){
+                    mini = search;
+                    cpt -= 1;
+                }
+            }
+                  break;
+                  
+      case 'o':
+          
+          while(( NombreMystere != search) || (cpt ==0)){
+              search = searchNumberPC(mini,maxi);
+              if (search > NombreMystere){
+                  maxi = search;
+                  cpt -= 1;
+              }
+              if (search < NombreMystere){
+                  mini = search;
+                  cpt -= 1;
+              }
+          }
+                break;
+                
+    case 'h':
+        
+        while(( NombreMystere != search) || (cpt ==0)){
+            search = searchNumberPC(mini,maxi);
+            if (search > NombreMystere){
+                printf("plus petit\n");
+                cpt -= 1;
+            }
+            if (search < NombreMystere){
+                printf("plus grand\n");
+                cpt -= 1;
+            }
+        }
+              break;
+
+            
+    }
+    
+              if (cpt == 0){
+                printf("Vous avez perdu, le nombre mystere est : %d\n",NombreMystere);
+            }
+            
+              else{
+                printf("Vous avez gagné en %d essaies\n",10 - cpt);
+            }
+        
+    }
+
+

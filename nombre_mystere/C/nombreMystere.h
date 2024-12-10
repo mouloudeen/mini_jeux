@@ -26,6 +26,9 @@ int searchNumberPC(int mini,int maxi);
 /* choix du premier joueur*/
 int Playerchoose(int mini, int maxi);
 
+/* le jeu du nombre secret*/
+void NombreSecret();
+
 #endif /* nombreMystere */
 
 
