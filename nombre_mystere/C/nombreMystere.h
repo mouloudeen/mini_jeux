@@ -15,13 +15,13 @@ int chooseRandomNumber(int, int);
 int chooseHumanNumber(int mini, int maxi);
 
 /* l'humain cherche le nombre secret*/
-int searchNumberHuman(int mini,int maxi);
+int searchNumberHuman(int mini,int maxi,int minis, int maxis);
 
 /* random cherche le nombre secret*/
-int searchNumberRandom(int mini,int maxi);
+int searchNumberRandom(int mini,int maxi,int minis, int maxis);
 
 /* ordi cherche le nombre secret*/
-int searchNumberPC(int mini,int maxi);
+int searchNumberPC(int mini,int maxi,int minis, int maxis);
 
 /* choix du premier joueur*/
 int Playerchoose(int mini, int maxi);

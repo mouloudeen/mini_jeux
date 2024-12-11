@@ -30,7 +30,7 @@ int chooseHumanNumber(int mini, int maxi){
 }
 
 /* l'humain cherche le nombre secret*/
-int searchNumberHuman(int mini,int maxi){
+int searchNumberHuman(int mini,int maxi,int minis, int maxis){
     
     bool rep = false;
     int nombre;
@@ -39,7 +39,7 @@ int searchNumberHuman(int mini,int maxi){
         
         printf("le nombre à chercher est entre %d et %d\n",mini, maxi);
         scanf("%d",&nombre);
-        if ((nombre >= mini) && (nombre <= maxi)){
+        if ((nombre >= minis) && (nombre <= maxis)){
             rep = true;
         }
        
@@ -49,7 +49,7 @@ int searchNumberHuman(int mini,int maxi){
 }
 
 /* random cherche le nombre secret*/
-int searchNumberRandom(int mini,int maxi){
+int searchNumberRandom(int mini,int maxi,int minis, int maxis){
     
     srand(time(NULL));
     
@@ -59,7 +59,7 @@ int searchNumberRandom(int mini,int maxi){
 }
 
 /* ordi cherche le nombre secret*/
-int searchNumberPC(int mini,int maxi){
+int searchNumberPC(int mini,int maxi,int minis, int maxis){
     int nombre = (maxi+mini)/2;
     printf("nombre = %d\n", nombre);
     return nombre;
@@ -91,15 +91,16 @@ int Playerchoose(int mini, int maxi){
 
 /* le jeu du nombre secret*/
 void NombreSecret(){
-    int mini, maxi;
+    int mini, maxi, minis, maxis;
     
     
     printf("choisir le minimum\n");
     scanf("%d",&mini);
-    
+    minis = mini;
     
     printf("choisir le maximum\n");
     scanf("%d",&maxi);
+    maxis = maxi;
     
     int NombreMystere = Playerchoose(mini,maxi);
     
@@ -117,8 +118,10 @@ void NombreSecret(){
         
     }
     
-    int search = 0;
+    
     int cpt = 0;
+    /*
+    int search = 0;
     switch(choose){
         case 'r':
             
@@ -166,6 +169,39 @@ void NombreSecret(){
               break;
 
             
+    }*/
+    
+    int (*psearch)(int,int,int,int);
+    
+    
+    switch(choose){
+        case 'r':
+            psearch = &searchNumberRandom;
+            break;
+            
+        case 'o':
+            psearch = &searchNumberPC;
+            break;
+            
+        case 'h':
+            psearch = &searchNumberHuman;
+            break;
+            
+    }
+    int search = 0;
+    
+    while (( search != NombreMystere) && (cpt < 9)){
+         search = (*psearch)(mini,maxi,minis,maxis);
+        if (search > NombreMystere){
+            printf("plus petit\n");
+            maxi = search;
+            cpt += 1;
+        }
+        if (search < NombreMystere){
+            printf("plus grand\n");
+            mini = search;
+            cpt += 1;
+        }
     }
     
               if (cpt == 9){
@@ -173,9 +209,11 @@ void NombreSecret(){
             }
             
               else{
-                printf("Vous avez gagné en %d essaies\n",cpt+1);
+                printf("Vous avez gagné en %d essaie(s)\n",cpt+1);
             }
         
+   
+    
     }
 
 
