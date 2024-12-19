@@ -26,6 +26,9 @@ public:
     /* random cherche le nombre secret*/
     int searchNumberRandom(int mini,int maxi,int minis, int maxis);
     
+    /* ordi cherche le nombre secret*/
+    int searchNumberPC(int mini,int maxi,int minis, int maxis);
+    
     
 private:
     

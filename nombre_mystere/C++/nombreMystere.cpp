@@ -60,3 +60,10 @@ int Mystery::searchNumberRandom(int mini,int maxi,int minis, int maxis){
     cout <<"le nombre de recherche = "<<nombre << endl;
     return nombre;
 }
+
+/* ordi cherche le nombre secret*/
+int Mystery::searchNumberPC(int mini,int maxi,int minis, int maxis){
+    int nombre = (maxi+mini)/2;
+    cout <<"le nombre de recherche = "<<nombre << endl;
+    return nombre;
+}
