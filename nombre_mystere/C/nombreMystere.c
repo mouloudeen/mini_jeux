@@ -5,7 +5,7 @@ int chooseRandomNumber(int mini, int maxi){
     srand(time(NULL));
     
     int secret = rand()%(maxi-mini)+mini;
-    printf("secret = %d\n", secret);
+    /*printf("secret = %d\n", secret);*/
     return secret;
 }
 
@@ -24,7 +24,7 @@ int chooseHumanNumber(int mini, int maxi){
         }
     }
     
-    printf("secret = %d\n", secret);
+   /* printf("secret = %d\n", secret);*/
     return secret;
     
 }
@@ -44,7 +44,7 @@ int searchNumberHuman(int mini,int maxi,int minis, int maxis){
         }
        
     }
-    printf("le nombre de recherche = %d\n",nombre);
+    /*printf("le nombre de recherche = %d\n",nombre);*/
     return nombre;
 }
 
@@ -61,7 +61,7 @@ int searchNumberRandom(int mini,int maxi,int minis, int maxis){
 /* ordi cherche le nombre secret*/
 int searchNumberPC(int mini,int maxi,int minis, int maxis){
     int nombre = (maxi+mini)/2;
-    printf("nombre = %d\n", nombre);
+   printf("nombre = %d\n", nombre);
     return nombre;
 }
 
@@ -110,7 +110,7 @@ void NombreSecret(){
         
         printf("choisir le random, ordinateur et le joueur humain pour rechercher le nombre mystere(r/o/h)\n");
         scanf(" %c",&choose);
-        printf("choose = %c\n",choose);
+       /* printf("choose = %c\n",choose);*/
         
         if ((choose == 'r') || (choose == 'o') || (choose == 'h')){
             rep = true;
