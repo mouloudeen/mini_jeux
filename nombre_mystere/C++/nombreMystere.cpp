@@ -91,3 +91,81 @@ int Mystery::Playerchoose(int mini, int maxi){
             break;
     }
 }
+
+/* le jeu du nombre secret*/
+void Mystery::NombreSecret(){
+    int mini, maxi, minis, maxis;
+    
+    
+   cout <<"choisir le minimum"<<endl;
+    scanf("%d",&mini);
+    minis = mini;
+    
+    cout <<"choisir le maximum"<<endl;
+    scanf("%d",&maxi);
+    maxis = maxi;
+    
+    int NombreMystere = Playerchoose(mini,maxi);
+    
+    bool rep = false;
+    char choose;
+    while (rep == false){
+        
+        cout<<"choisir le random, ordinateur et le joueur humain pour rechercher le nombre mystere(r/o/h)"<<endl;
+        scanf(" %c",&choose);
+        cout<<"choose = "<<choose <<endl;
+        
+        if ((choose == 'r') || (choose == 'o') || (choose == 'h')){
+            rep = true;
+        }
+        
+    }
+    
+    
+    int cpt = 0;
+    
+    
+    int (*psearch)(int,int,int,int);
+    
+    
+    switch(choose){
+        case 'r':
+            psearch = &searchNumberRandom;
+            break;
+            
+        case 'o':
+            psearch = &searchNumberPC;
+            break;
+            
+        case 'h':
+            psearch = &searchNumberHuman;
+            break;
+            
+    }
+    int search = 0;
+    
+    while (( search != NombreMystere) && (cpt < 9)){
+         search = (*psearch)(mini,maxi,minis,maxis);
+        if (search > NombreMystere){
+            cout<<"plus petit" <<endl;
+            maxi = search;
+            cpt += 1;
+        }
+        if (search < NombreMystere){
+            cout<<"plus grand" <<endl;
+            mini = search;
+            cpt += 1;
+        }
+    }
+    
+              if (cpt == 9){
+                  cout<<"Vous avez perdu, le nombre mystere est : "<<NombreMystere <<endl;
+            }
+            
+              else{
+                  cout<<"Vous avez gagné en " << (cpt+1) <<" essaie(s)" <<endl;
+            }
+        
+   
+    
+    }

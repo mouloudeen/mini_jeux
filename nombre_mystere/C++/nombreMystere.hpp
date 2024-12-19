@@ -15,22 +15,25 @@ public:
     Mystery();
     
     /* Choix du nombre au hasard entre mini et maxi*/
-    int chooseRandomNumber(int mini, int maxi);
+    static int chooseRandomNumber(int mini, int maxi);
     
     /* choix par un humain entre mini et maxi*/
-    int chooseHumanNumber(int mini, int maxi);
+    static int chooseHumanNumber(int mini, int maxi);
     
     /* l'humain cherche le nombre secret*/
-    int searchNumberHuman(int mini,int maxi,int minis, int maxis);
+    static int searchNumberHuman(int mini,int maxi,int minis, int maxis);
     
     /* random cherche le nombre secret*/
-    int searchNumberRandom(int mini,int maxi,int minis, int maxis);
+    static int searchNumberRandom(int mini,int maxi,int minis, int maxis);
     
     /* ordi cherche le nombre secret*/
-    int searchNumberPC(int mini,int maxi,int minis, int maxis);
+    static int searchNumberPC(int mini,int maxi,int minis, int maxis);
     
     /* choix du premier joueur*/
-    int Playerchoose(int mini, int maxi);
+    static int Playerchoose(int mini, int maxi);
+    
+    /* le jeu du nombre secret*/
+    void NombreSecret();
     
     
 private:
