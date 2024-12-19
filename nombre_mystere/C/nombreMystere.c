@@ -37,7 +37,7 @@ int searchNumberHuman(int mini,int maxi,int minis, int maxis){
     
     while (rep == false){
         
-        printf("le nombre à chercher est entre %d et %d\n",mini, maxi);
+        printf("le nombre à chercher est entre %d et %d\n",minis, maxis);
         scanf("%d",&nombre);
         if ((nombre >= minis) && (nombre <= maxis)){
             rep = true;
