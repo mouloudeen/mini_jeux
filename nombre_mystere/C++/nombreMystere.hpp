@@ -23,6 +23,9 @@ public:
     /* l'humain cherche le nombre secret*/
     int searchNumberHuman(int mini,int maxi,int minis, int maxis);
     
+    /* random cherche le nombre secret*/
+    int searchNumberRandom(int mini,int maxi,int minis, int maxis);
+    
     
 private:
     

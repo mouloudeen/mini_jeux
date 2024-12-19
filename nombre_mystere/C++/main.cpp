@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     Mystery *myster1 = new Mystery();
-    myster1->searchNumberHuman(1,1,1,100);
+    myster1->searchNumberRandom(1,100,1,1);
     
     
     return 0;

@@ -50,3 +50,13 @@ int Mystery::searchNumberHuman(int mini,int maxi,int minis, int maxis){
     cout <<"le nombre de recherche = "<<nombre << endl;
     return nombre;
 }
+
+/* random cherche le nombre secret*/
+int Mystery::searchNumberRandom(int mini,int maxi,int minis, int maxis){
+    
+    srand(time(NULL));
+    
+    int nombre = rand()%(maxi-mini)+mini;
+    cout <<"le nombre de recherche = "<<nombre << endl;
+    return nombre;
+}
