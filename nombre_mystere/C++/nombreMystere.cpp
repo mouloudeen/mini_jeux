@@ -7,7 +7,7 @@ int Mystery::chooseRandomNumber(int mini,int maxi){
     srand(time(NULL));
     
     int secret = rand()%(maxi-mini)+mini;
-   cout <<"secret = "<< secret << endl;
+   /*cout <<"secret = "<< secret << endl;*/
     return secret;
 };
 
@@ -27,7 +27,7 @@ int Mystery::chooseHumanNumber(int mini, int maxi){
         }
     }
     
-    cout <<"secret = "<< secret << endl;
+    /*cout <<"secret = "<< secret << endl;*/
     return secret;
     
 }
@@ -47,7 +47,7 @@ int Mystery::searchNumberHuman(int mini,int maxi,int minis, int maxis){
         }
        
     }
-    cout <<"le nombre de recherche = "<<nombre << endl;
+   /* cout <<"le nombre de recherche = "<<nombre << endl;*/
     return nombre;
 }
 
@@ -113,7 +113,7 @@ void Mystery::NombreSecret(){
         
         cout<<"choisir le random, ordinateur et le joueur humain pour rechercher le nombre mystere(r/o/h)"<<endl;
         scanf(" %c",&choose);
-        cout<<"choose = "<<choose <<endl;
+        /*cout<<"choose = "<<choose <<endl;*/
         
         if ((choose == 'r') || (choose == 'o') || (choose == 'h')){
             rep = true;
