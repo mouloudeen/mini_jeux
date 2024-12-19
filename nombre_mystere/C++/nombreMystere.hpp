@@ -20,6 +20,9 @@ public:
     /* choix par un humain entre mini et maxi*/
     int chooseHumanNumber(int mini, int maxi);
     
+    /* l'humain cherche le nombre secret*/
+    int searchNumberHuman(int mini,int maxi,int minis, int maxis);
+    
     
 private:
     

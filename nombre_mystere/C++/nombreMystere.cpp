@@ -31,3 +31,22 @@ int Mystery::chooseHumanNumber(int mini, int maxi){
     return secret;
     
 }
+
+/* l'humain cherche le nombre secret*/
+int Mystery::searchNumberHuman(int mini,int maxi,int minis, int maxis){
+    
+    bool rep = false;
+    int nombre;
+    
+    while (rep == false){
+        
+        cout <<"le nombre à chercher est entre " << minis <<" et "<< maxis <<endl;
+        scanf("%d",&nombre);
+        if ((nombre >= minis) && (nombre <= maxis)){
+            rep = true;
+        }
+       
+    }
+    cout <<"le nombre de recherche = "<<nombre << endl;
+    return nombre;
+}
