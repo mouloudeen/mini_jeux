@@ -67,3 +67,27 @@ int Mystery::searchNumberPC(int mini,int maxi,int minis, int maxis){
     cout <<"le nombre de recherche = "<<nombre << endl;
     return nombre;
 }
+
+/* choix du premier joueur*/
+int Mystery::Playerchoose(int mini, int maxi){
+    char choix;
+    bool rep = false;
+    
+    while(rep == false){
+       cout<<"Choisir entre l'ordinateur' et le joueur humain pour donner le nombre mystère (o/h)"<<endl;
+        scanf("%c",&choix);
+        
+        if ((choix == 'o') || (choix == 'h') ){
+            rep = true;
+        }
+    }
+    switch (choix){
+        case 'o':
+            return chooseRandomNumber(mini,maxi);
+            break;
+        
+        case 'h':
+            return chooseHumanNumber(mini,maxi);
+            break;
+    }
+}

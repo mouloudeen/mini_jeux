@@ -29,6 +29,9 @@ public:
     /* ordi cherche le nombre secret*/
     int searchNumberPC(int mini,int maxi,int minis, int maxis);
     
+    /* choix du premier joueur*/
+    int Playerchoose(int mini, int maxi);
+    
     
 private:
     
