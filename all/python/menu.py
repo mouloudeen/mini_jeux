@@ -4,6 +4,8 @@ import pfc
 
 
 
+
+
 #accueil Pierre Feuille Ciseau
 def AccueilPFC():
     print("1 : humain contre humain")
@@ -97,7 +99,7 @@ def debut():
             
         case '3':
             print("Le Pendu")
-            
+            pendu.pendu()
         case 'q':
             print("au revoir, a bientôt")
             
