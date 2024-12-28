@@ -4,36 +4,70 @@ import pfc
 
 
 
-
-#accueil du Nombre Mystere
-def AccueilNombreMystere():
-    print("1 : ordinateur contre ordinateur")
-    print("2 : ordinateur contre ordinateur heuristique")
+#accueil Pierre Feuille Ciseau
+def AccueilPFC():
+    print("1 : humain contre humain")
+    print("2 : humain contre ordinateur")
     print("3 : ordinateur contre humain")
-    print("4 : humain contre ordinateur")
-    print("5 : humain contre ordinateur heuristique")
-    print("6 : humain contre humain")
+    print("4 : ordinateur contre ordinateur")
     print("0 : retour")
     print("q : quitter")
     n = input()
     match n:
         case '1':
-            print("ordinateur contre ordinateur")
+            print("humain contre humain")
             
         case '2':
-            print("ordinateur contre ordinateur heuristique")
+            print("humain contre ordinateur")
             
         case '3':
-            print("3 : ordinateur contre humain")
+            print("ordinateur contre humain")
             
         case '4':
-            print("4 : humain contre ordinateur")
+            print("ordinateur contre ordinateur")
+            
+        case '0':
+            print("retour")
+            debut()
+            
+        case 'q':
+            print("au revoir, a bientôt")
+            
+        case other:
+            print("Vous pouvez utilisé soit q, 0, 1, 2, 3, 4")
+            AccueilPFC()
+    
+
+
+#accueil du Nombre Mystere
+def AccueilNombreMystere():
+    print("1 : humain contre humain")
+    print("2 : humain contre ordinateur")
+    print("3 : humain contre ordinateur heuristique")
+    print("4 : ordinateur contre humain")
+    print("5 : ordinateur contre ordinateur")
+    print("6 : ordinateur contre ordinateur heuristique")
+    print("0 : retour")
+    print("q : quitter")
+    n = input()
+    match n:
+        case '1':
+            print("humain contre humain")
+            
+        case '2':
+            print("humain contre ordinateur")
+            
+        case '3':
+            print("humain contre ordinateur heuristique")
+            
+        case '4':
+            print("ordinateur contre humain")
             
         case '5':
-            print("5 : humain contre ordinateur heuristique")
+            print("ordinateur contre ordinateur")
             
         case '6':
-            print("6 : humain contre humain")
+            print("ordinateur contre ordinateur heuristique")
         
         case '0':
             print("retour")
@@ -59,6 +93,7 @@ def debut():
             AccueilNombreMystere()
         case '2':
             print("Pierre Feuille Ciseau")
+            AccueilPFC()
             
         case '3':
             print("Le Pendu")
