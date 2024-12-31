@@ -14,15 +14,8 @@ def humanPlayer():
     return int(n)
 
 # on choisit si c'est un humain ou l'ordinateur
-def choixjoueur(joueur):
+def choixjoueur(n):
     
-    print(f"{joueur} : ordinateur ou humain (o/h)")
-    n = input()
-    
-    # si n est different de o et h
-    if (n != 'o') and (n != 'h'):
-        n = choixjoueur(joueur)
-        
     match(n):
     
         case 'o':
@@ -33,21 +26,21 @@ def choixjoueur(joueur):
     return player
 
 # on choisit les 2 joueurs
-def choix_joueur():
-    player1 = choixjoueur("premier joueur")
-    player2 = choixjoueur("deuxieme joueur")
+def choix_joueur(n1,n2):
+    player1 = choixjoueur(n1)
+    player2 = choixjoueur(n2)
     return player1,player2
     
 
 # pierre-feuille-ciseau
-def pfc(maxPoint):
-    player1,player2 = choix_joueur()
+def pfc(n1,n2):
+    player1,player2 = choix_joueur(n1,n2)
     
     pointPlayer1 = 0
     pointPlayer2 = 0
 
     liste = ("la pierre", "la feuille", "le ciseau")
-    while pointPlayer1 < maxPoint and pointPlayer2 < maxPoint:
+    while pointPlayer1 < 3 and pointPlayer2 < 3:
         cpt1 = player1()
         print(f" joueur 1 a joué {liste[cpt1-1]}\n")
         cpt2 = player2()

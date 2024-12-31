@@ -33,6 +33,15 @@ def AccueilPendu():
             pendu.pendu('10')
         case '8':
             pendu.pendu('11')
+        case '0':
+            print("retour")
+            debut()
+            
+        case 'q':
+            print("au revoir, a bientôt")
+            
+        case other:
+            print("Vous pouvez utilisé soit q, 0, 1, 2, 3, 4, 5, 6, 7, 8")
      
     c = 0
     while (c == 0):
@@ -65,16 +74,17 @@ def AccueilPFC():
     match n:
         case '1':
             print("humain contre humain")
+            pfc.pfc('h','h')
             
         case '2':
             print("humain contre ordinateur")
-            
+            pfc.pfc('h','o')
         case '3':
             print("ordinateur contre humain")
-            
+            pfc.pfc('o','h')
         case '4':
             print("ordinateur contre ordinateur")
-            
+            pfc.pfc('o','o')
         case '0':
             print("retour")
             debut()
@@ -85,6 +95,20 @@ def AccueilPFC():
         case other:
             print("Vous pouvez utilisé soit q, 0, 1, 2, 3, 4")
             AccueilPFC()
+    c = 0
+    while (c == 0):
+    
+        print("voulez vous recommencer (o/n)")
+        n = input()
+    
+        if ( n == 'o'):
+            AccueilPFC()
+            c = 1
+        
+        if (n == 'n'):
+            print('a bientot')
+            debut()
+            c = 1
     
 
 

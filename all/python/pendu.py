@@ -59,13 +59,3 @@ def pendu(n):
             cherche_mot(listeMot.L10[i],len(listeMot.L10[i]),10)
         case other:
             cherche_mot(listeMot.L20[i],len(listeMot.L20[i]),10)
-    
-    '''print("voulez-vous recommencer ?(oui/non)")
-    n = input()
-    
-    if (n=="oui"):
-        pendu()
-    else:
-        print("au revoir à bientot")'''
-
-            
