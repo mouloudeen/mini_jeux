@@ -37,13 +37,13 @@ def cherche_mot(mot,taille,essaies):
           print(f"vous avez perdu, le mot qui fallait trouver :{mot}")
 
 
-def pendu():
-    print("Combien de lettres vous voulez pour votre mot:")
-    n = input()
+def pendu(n):
+    
+   
     i = random.randint(0,100)
     
     match(n):
-        case '2'| '3' | '4':
+        case '4':
             cherche_mot(listeMot.L1[i],len(listeMot.L1[i]),10)
         case '5':
             cherche_mot(listeMot.L5[i],len(listeMot.L5[i]),10)
@@ -60,12 +60,12 @@ def pendu():
         case other:
             cherche_mot(listeMot.L20[i],len(listeMot.L20[i]),10)
     
-    print("voulez-vous recommencer ?(oui/non)")
+    '''print("voulez-vous recommencer ?(oui/non)")
     n = input()
     
     if (n=="oui"):
         pendu()
     else:
-        print("au revoir à bientot")
+        print("au revoir à bientot")'''
 
             

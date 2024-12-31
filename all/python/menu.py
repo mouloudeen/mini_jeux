@@ -2,9 +2,56 @@ import nombreMystere
 import pendu
 import pfc
 
-
-
-
+#Accueil Pendu
+def AccueilPendu():
+    print("1 : moins de 5 lettres")
+    print("2 : 5 lettres")
+    print("3 : 6 lettres")
+    print("4 : 7 lettres")
+    print("5 : 8 lettres")
+    print("6 : 9 lettres")
+    print("7 : 10 lettres")
+    print("8 : plus de 10 lettres")
+    print("0 : retour")
+    print("q : quitter")
+    
+    n = input()
+    match(n):
+        case '1':
+            pendu.pendu('4')
+        case '2':
+            pendu.pendu('5')
+        case '3':
+            pendu.pendu('6')
+        case '4':
+            pendu.pendu('7')
+        case '5':
+            pendu.pendu('8')
+        case '6':
+            pendu.pendu('9')
+        case '7':
+            pendu.pendu('10')
+        case '8':
+            pendu.pendu('11')
+     
+    c = 0
+    while (c == 0):
+    
+        print("voulez vous recommencer (o/n)")
+        n = input()
+    
+        if ( n == 'o'):
+            AccueilPendu()
+            c = 1
+        
+        if (n == 'n'):
+            print('a bientot')
+            debut()
+            c = 1
+            
+    
+    
+        
 
 #accueil Pierre Feuille Ciseau
 def AccueilPFC():
@@ -99,7 +146,8 @@ def debut():
             
         case '3':
             print("Le Pendu")
-            pendu.pendu()
+            AccueilPendu()
+            
         case 'q':
             print("au revoir, a bientôt")
             
