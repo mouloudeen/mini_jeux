@@ -42,6 +42,7 @@ def AccueilPendu():
             
         case other:
             print("Vous pouvez utilisé soit q, 0, 1, 2, 3, 4, 5, 6, 7, 8")
+            AccueilPendu()
      
     c = 0
     while (c == 0):
@@ -201,4 +202,3 @@ def debut():
 #affichage du menu complet
 def menu():
     debut()
-    
