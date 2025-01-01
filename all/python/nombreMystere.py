@@ -39,29 +39,20 @@ def searchNumberPC(mini,maxi):
     return n
     
 #choix du premier joueur
-def ChoixJoueur1(mini,maxi):
-    print("Choisir entre l'ordinateur' et le joueur humain pour donner le nombre mystère (o/h)")
-    n = input()
-    if n!= 'o' and n != 'h':
-        ChoixJoueur1(mini,maxi)
+def ChoixJoueur1(n):
     
     match(n):
         
-            
         case 'o':
-            return chooseRandomNumber(mini,maxi)
+            return chooseRandomNumber(1,100)
         
         case 'h':
-            return int(chooseHumanNumber(mini,maxi))
+            return int(chooseHumanNumber(1,100))
         
 
 #choix du deuxieme joueur
-def ChoixJoueur2():
-    print("choisir le random, ordinateur et le joueur humain pour rechercher le nombre mystere(r/o/h)")
+def ChoixJoueur2(n):
     
-    n = input()
-    if n!= 'o' and n != 'h' and n != 'r':
-        ChoixJoueur2()
     
     match(n):
         case 'r':
@@ -74,20 +65,16 @@ def ChoixJoueur2():
             return searchNumberHuman
             
 # le jeu du nombre secret
-def nombreSecret():
-    print("choisir le minimum")
-    n= input()
-    mini = int(n)
+def nombreSecret(n1, n2):
     
-    print("choisir le maximum")
-    n = input()
-    maxi = int(n)
     
-    NombreMystere = ChoixJoueur1(mini,maxi)
+    NombreMystere = ChoixJoueur1(n1)
     
     cpt = 0
     
-    Joueur2 = ChoixJoueur2()
+    Joueur2 = ChoixJoueur2(n2)
+    mini = 1
+    maxi = 100
     Nombre = Joueur2(mini,maxi)
    
     while NombreMystere != Nombre and cpt != 10:
@@ -110,20 +97,4 @@ def nombreSecret():
     
     else :
         
-        print(f"Bravo vous avez trouvé le bon nombre {NombreMystere} avec {cpt} essaie(s)")
-    
-    #recommencer la partie
-    print("voulez-vous recommencer ?(oui/non)")
-    n = input()
-    
-    if (n=="oui"):
-        nombreSecret()
-    else:
-        print("au revoir à bientot")
-
-
-
-
-
- 
-    
+        print(f"Bravo vous avez trouvé le bon nombre {NombreMystere} avec {cpt+1} essaie(s)")

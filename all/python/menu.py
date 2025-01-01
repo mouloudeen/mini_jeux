@@ -126,22 +126,22 @@ def AccueilNombreMystere():
     match n:
         case '1':
             print("humain contre humain")
-            
+            nombreMystere.nombreSecret('h', 'h')
         case '2':
             print("humain contre ordinateur")
-            
+            nombreMystere.nombreSecret('h', 'r')
         case '3':
             print("humain contre ordinateur heuristique")
-            
+            nombreMystere.nombreSecret('h', 'o')
         case '4':
             print("ordinateur contre humain")
-            
+            nombreMystere.nombreSecret('o', 'h')
         case '5':
             print("ordinateur contre ordinateur")
-            
+            nombreMystere.nombreSecret('o', 'r')
         case '6':
             print("ordinateur contre ordinateur heuristique")
-        
+            nombreMystere.nombreSecret('o', 'o')
         case '0':
             print("retour")
             debut()
@@ -151,6 +151,22 @@ def AccueilNombreMystere():
         case other:
             print("Vous pouvez utilisé soit q, 0, 1, 2, 3, 4, 5, 6")
             AccueilNombreMystere()
+    
+    c = 0
+    while (c == 0):
+    
+        print("voulez vous recommencer (o/n)")
+        n = input()
+    
+        if ( n == 'o'):
+            AccueilNombreMystere()
+            c = 1
+        
+        if (n == 'n'):
+            print('a bientot')
+            debut()
+            c = 1
+    
     
 
 # debut du menu
