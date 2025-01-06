@@ -1,5 +1,10 @@
 #include "menu.h"
 
+
+
+
+
+
 /*Accueil Pendu*/
 void AccueilPendu(){
     char choix;
@@ -75,6 +80,64 @@ void AccueilPendu(){
     }
 }
 
+// **********************************************************
+
+// finir la fonction AccueilPFC
+
+/*accueil Pierre Feuille Ciseau*/
+void AccueilPFC(){
+    char choix;
+    
+    printf("1 : humain contre humain\n");
+    printf("2 : humain contre ordinateur\n");
+    printf("3 : ordinateur contre humain\n");
+    printf("4 : ordinateur contre ordinateur\n");
+    printf("0 : retour\n");
+    printf("q : quitter\n");
+    scanf("%c",&choix);
+    
+    switch(choix){
+        case '1':
+            pfc('h','h');
+            break;
+        case '2':
+            pfc('h','o');
+            break;
+        case '3':
+            pfc('o','h');
+            break;
+        case '4':
+            pfc('o','o');
+            break;
+        case '0':
+            debut();
+            break;
+            
+        case 'q':
+            printf("au revoir, a bientôt\n");
+            break;
+            
+        default:
+            printf("Vous pouvez utilisé soit q, 0, 1, 2, 3, 4\n");
+            AccueilPFC();
+    }
+    int c = 0;
+    while (c == 0){
+        char choix1;
+        printf("voulez vous recommencer (o/n)\n");
+        scanf(" %c", &choix1);
+        
+        if ( choix1 == 'o'){
+            AccueilPendu();
+            c = 1;
+        }
+        if (choix1 == 'n'){
+            printf("a bientot\n");
+            debut();
+            c = 1;
+            }
+    }
+}
 /*debut du menu*/
 void debut(){
     char choix;
@@ -91,7 +154,7 @@ void debut(){
             break;
         case '2':
             printf("Pierre Feuille Ciseau\n");
-           /* AccueilPFC()*/
+            AccueilPFC();
             break;
             
         case '3':

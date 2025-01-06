@@ -13,6 +13,14 @@
 #include "pfc.h"
 
 
+/*Accueil Pendu*/
+void AccueilPendu();
+
+/*accueil Pierre Feuille Ciseau*/
+void AccueilPFC();
+
+
+
 /*debut du menu*/
 void debut();
 

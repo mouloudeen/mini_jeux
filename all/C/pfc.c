@@ -33,16 +33,18 @@ int humanPlayer(){
 
 
 /* on choisit si c'est un humain ou l'ordinateur */
-char choixjoueur(char nomplayer[10]){
-    char choix;
-    printf("%s joueur: ordinateur ou humain (o/h)\n",nomplayer);
-    scanf("%c", &choix);
-    if ((choix != 'o') && (choix != 'h')){
-        choix = choixjoueur(nomplayer);
-   }
-    return choix;
-    
+/*char choixjoueur(char player){
+    switch{(player):
+        
+    case 'o':
+        return randomPlayer
+        break;
+    case 'h':
+        return humanPlayer
+        break;
+    }
 }
+*/
 
 /* choisir le joueur soit humain ou random*/
 int choix_joueur(char player){
@@ -60,11 +62,11 @@ int choix_joueur(char player){
 }
 
 /* Pierre Feuille Ciseau*/
-void pfc(int maxPoint){
-    char player1, player2;
+void pfc(char player1, char player2){
+    /*char player1, player2;
     
     player1 = choixjoueur("Premier");
-    player2 = choixjoueur("Deuxieme");
+    player2 = choixjoueur("Deuxieme");*/
     
     
     int pointPlayer1 = 0;
@@ -75,7 +77,7 @@ void pfc(int maxPoint){
     int jeuPlayer1, jeuPlayer2, differencePlayer;
    
     
-    while ((pointPlayer1 < maxPoint) && (pointPlayer2 < maxPoint)){
+    while ((pointPlayer1 < 3) && (pointPlayer2 < 3)){
         jeuPlayer1 = choix_joueur(player1);
         printf("Le joueur 1 a joué %s\n", liste[jeuPlayer1 -1]);
         

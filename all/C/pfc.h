@@ -14,12 +14,12 @@ int randomPlayer();
 int humanPlayer();
 
 /* on choisit si c'est un humain ou l'ordinateur */
-char choixjoueur(char nomplayer[10]);
+/*char choixjoueur(char nomplayer[10]);*/
 
 /* choisir le joueur soit humain ou random*/
 int choix_joueur(char);
 
 /* Pierre Feuille Ciseau*/
-void pfc(int);
+void pfc(char, char);
 
 #endif /* pfc */
