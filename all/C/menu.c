@@ -128,7 +128,7 @@ void AccueilPFC(){
         scanf(" %c", &choix1);
         
         if ( choix1 == 'o'){
-            AccueilPendu();
+            AccueilPFC();
             c = 1;
         }
         if (choix1 == 'n'){
@@ -138,6 +138,77 @@ void AccueilPFC(){
             }
     }
 }
+
+
+/*accueil du Nombre Mystere*/
+void AccueilNombreMystere(){
+    char choix;
+    printf("1 : humain contre humain\n");
+    printf("2 : humain contre ordinateur\n");
+    printf("3 : humain contre ordinateur heuristique\n");
+    printf("4 : ordinateur contre humain\n");
+    printf("5 : ordinateur contre ordinateur\n");
+    printf("6 : ordinateur contre ordinateur heuristique\n");
+    printf("0 : retour\n");
+    printf("q : quitter\n");
+   
+    scanf("%c",&choix);
+    
+    switch(choix){
+        case '1':
+            
+            NombreSecret('h', 'h');
+            break;
+        case '2':
+            
+            NombreSecret('h', 'r');
+            break;
+        case '3':
+            
+            NombreSecret('h', 'o');
+            break;
+        case '4':
+            
+            NombreSecret('o', 'h');
+            break;
+        case '5':
+           
+            NombreSecret('o', 'r');
+            break;
+        case '6':
+            
+            NombreSecret('o', 'o');
+            break;
+        case '0':
+            printf("retour\n");
+            debut();
+            break;
+        case 'q':
+            printf("au revoir, a bientôt\n");
+            break;
+            
+        default:
+            printf("Vous pouvez utilisé soit q, 0, 1, 2, 3, 4, 5, 6\n");
+            AccueilNombreMystere();
+    }
+    int c = 0;
+    while (c == 0){
+        char choix1;
+        printf("voulez vous recommencer (o/n)\n");
+        scanf(" %c", &choix1);
+        
+        if ( choix1 == 'o'){
+            AccueilNombreMystere();
+            c = 1;
+        }
+        if (choix1 == 'n'){
+            printf("a bientot\n");
+            debut();
+            c = 1;
+            }
+    }
+}
+
 /*debut du menu*/
 void debut(){
     char choix;
@@ -150,7 +221,7 @@ void debut(){
     switch(choix){
         case '1':
             printf("Nombre Mystere\n");
-            /*AccueilNombreMystere()*/
+            AccueilNombreMystere();
             break;
         case '2':
             printf("Pierre Feuille Ciseau\n");

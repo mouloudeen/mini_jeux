@@ -30,16 +30,16 @@ int chooseHumanNumber(int mini, int maxi){
 }
 
 /* l'humain cherche le nombre secret*/
-int searchNumberHuman(int mini,int maxi,int minis, int maxis){
+int searchNumberHuman(int mini,int maxi){
     
     bool rep = false;
     int nombre;
     
     while (rep == false){
         
-        printf("le nombre à chercher est entre %d et %d\n",minis, maxis);
+        printf("le nombre à chercher est entre %d et %d\n",mini, maxi);
         scanf("%d",&nombre);
-        if ((nombre >= minis) && (nombre <= maxis)){
+        if ((nombre >= mini) && (nombre <= maxi)){
             rep = true;
         }
        
@@ -49,7 +49,7 @@ int searchNumberHuman(int mini,int maxi,int minis, int maxis){
 }
 
 /* random cherche le nombre secret*/
-int searchNumberRandom(int mini,int maxi,int minis, int maxis){
+int searchNumberRandom(int mini,int maxi){
     
     srand(time(NULL));
     
@@ -59,119 +59,37 @@ int searchNumberRandom(int mini,int maxi,int minis, int maxis){
 }
 
 /* ordi cherche le nombre secret*/
-int searchNumberPC(int mini,int maxi,int minis, int maxis){
+int searchNumberPC(int mini,int maxi){
     int nombre = (maxi+mini)/2;
    printf("nombre = %d\n", nombre);
     return nombre;
 }
 
 /* choix du premier joueur*/
-int Playerchoose(int mini, int maxi){
-    char choix;
-    bool rep = false;
+int Playerchoose(char choix){
+   
     
-    while(rep == false){
-        printf("Choisir entre l'ordinateur' et le joueur humain pour donner le nombre mystère (o/h)\n");
-        scanf("%c",&choix);
-        
-        if ((choix == 'o') || (choix == 'h') ){
-            rep = true;
-        }
-    }
     switch (choix){
         case 'o':
-            return chooseRandomNumber(mini,maxi);
+            return chooseRandomNumber(1,100);
             break;
         
         case 'h':
-            return chooseHumanNumber(mini,maxi);
+            return chooseHumanNumber(1,100);
             break;
     }
 }
 
-/* le jeu du nombre secret*/
-void NombreSecret(){
-    int mini, maxi, minis, maxis;
-    
-    
-    printf("choisir le minimum\n");
-    scanf("%d",&mini);
-    minis = mini;
-    
-    printf("choisir le maximum\n");
-    scanf("%d",&maxi);
-    maxis = maxi;
-    
-    int NombreMystere = Playerchoose(mini,maxi);
-    
-    bool rep = false;
-    char choose;
-    while (rep == false){
-        
-        printf("choisir le random, ordinateur et le joueur humain pour rechercher le nombre mystere(r/o/h)\n");
-        scanf(" %c",&choose);
-       /* printf("choose = %c\n",choose);*/
-        
-        if ((choose == 'r') || (choose == 'o') || (choose == 'h')){
-            rep = true;
-        }
-        
-    }
-    
-    
-    int cpt = 0;
-    /*
-    int search = 0;
-    switch(choose){
-        case 'r':
-            
-            while(( NombreMystere != search) && (cpt < 10)){
-                search = searchNumberRandom(mini,maxi);
-                if (search > NombreMystere){
-                    maxi = search;
-                    cpt += 1;
-                }
-                if (search < NombreMystere){
-                    mini = search;
-                    cpt += 1;
-                }
-            }
-                  break;
-                  
-      case 'o':
-          
-          while(( NombreMystere != search) && (cpt < 10)){
-              search = searchNumberPC(mini,maxi);
-              if (search > NombreMystere){
-                  maxi = search;
-                  cpt += 1;
-              }
-              if (search < NombreMystere){
-                  mini = search;
-                  cpt += 1;
-              }
-          }
-                break;
-                
-    case 'h':
-        
-        while(( NombreMystere != search) && (cpt  < 10)){
-            search = searchNumberHuman(mini,maxi);
-            if (search > NombreMystere){
-                printf("plus petit\n");
-                cpt += 1;
-            }
-            if (search < NombreMystere){
-                printf("plus grand\n");
-                cpt += 1;
-            }
-        }
-              break;
 
-            
-    }*/
+/* le jeu du nombre secret*/
+void NombreSecret(char choix, char choose){
     
-    int (*psearch)(int,int,int,int);
+    int NombreMystere = Playerchoose(choix);
+    
+    
+    
+    
+    int (*psearch)(int,int);
     
     
     switch(choose){
@@ -190,8 +108,12 @@ void NombreSecret(){
     }
     int search = 0;
     
+    int cpt =0;
+    
+    int mini = 1;
+    int maxi = 100;
     while (( search != NombreMystere) && (cpt < 9)){
-         search = (*psearch)(mini,maxi,minis,maxis);
+         search = (*psearch)(mini,maxi);
         if (search > NombreMystere){
             printf("plus petit\n");
             maxi = search;

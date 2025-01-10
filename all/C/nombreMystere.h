@@ -15,19 +15,20 @@ int chooseRandomNumber(int, int);
 int chooseHumanNumber(int mini, int maxi);
 
 /* l'humain cherche le nombre secret*/
-int searchNumberHuman(int mini,int maxi,int minis, int maxis);
+int searchNumberHuman(int mini, int maxi);
 
 /* random cherche le nombre secret*/
-int searchNumberRandom(int mini,int maxi,int minis, int maxis);
+int searchNumberRandom(int mini, int maxi);
 
 /* ordi cherche le nombre secret*/
-int searchNumberPC(int mini,int maxi,int minis, int maxis);
+int searchNumberPC(int mini, int maxi);
 
 /* choix du premier joueur*/
-int Playerchoose(int mini, int maxi);
+int Playerchoose(char choix);
+
 
 /* le jeu du nombre secret*/
-void NombreSecret();
+void NombreSecret(char choix, char choose);
 
 #endif /* nombreMystere */
 
