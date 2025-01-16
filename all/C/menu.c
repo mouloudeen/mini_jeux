@@ -56,6 +56,7 @@ void AccueilPendu(){
             
         case 'q':
             printf("au revoir, a bientôt\n");
+            exit( EXIT_SUCCESS);
             break;
             
         default:
@@ -79,10 +80,6 @@ void AccueilPendu(){
             }
     }
 }
-
-// **********************************************************
-
-// finir la fonction AccueilPFC
 
 /*accueil Pierre Feuille Ciseau*/
 void AccueilPFC(){
@@ -115,6 +112,7 @@ void AccueilPFC(){
             
         case 'q':
             printf("au revoir, a bientôt\n");
+            exit( EXIT_SUCCESS);
             break;
             
         default:
@@ -185,6 +183,7 @@ void AccueilNombreMystere(){
             break;
         case 'q':
             printf("au revoir, a bientôt\n");
+            exit( EXIT_SUCCESS);
             break;
             
         default:
@@ -235,6 +234,7 @@ void debut(){
             
         case 'q':
             printf("au revoir, a bientôt\n");
+            exit( EXIT_SUCCESS);
             break;
             
         default:
