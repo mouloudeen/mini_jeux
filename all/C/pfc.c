@@ -63,12 +63,6 @@ int choix_joueur(char player){
 
 /* Pierre Feuille Ciseau*/
 void pfc(char player1, char player2){
-    /*char player1, player2;
-    
-    player1 = choixjoueur("Premier");
-    player2 = choixjoueur("Deuxieme");*/
-    
-    
     int pointPlayer1 = 0;
     int pointPlayer2 = 0;
     
