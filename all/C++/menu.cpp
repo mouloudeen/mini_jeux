@@ -143,6 +143,79 @@ void Menu::AccueilPFC(){
     }
 }
 
+
+/*accueil du Nombre Mystere*/
+void Menu::AccueilNombreMystere(){
+    char choix;
+    cout <<"1 : humain contre humain" << endl;
+    cout <<"2 : humain contre ordinateur" << endl;
+    cout <<"3 : humain contre ordinateur heuristique" << endl;
+    cout <<"4 : ordinateur contre humain" << endl;
+    cout <<"5 : ordinateur contre ordinateur" << endl;
+    cout <<"6 : ordinateur contre ordinateur heuristique" << endl;
+    cout <<"0 : retour" << endl;
+    cout <<"q : quitter" << endl;
+   
+    scanf("%c",&choix);
+    
+    Mystery *m1 = new Mystery();
+    
+    switch(choix){
+        case '1':
+            
+            m1->NombreSecret('h', 'h');
+            break;
+        case '2':
+            
+            m1->NombreSecret('h', 'r');
+            break;
+        case '3':
+            
+            m1->NombreSecret('h', 'o');
+            break;
+        case '4':
+            
+            m1->NombreSecret('o', 'h');
+            break;
+        case '5':
+           
+            m1->NombreSecret('o', 'r');
+            break;
+        case '6':
+            
+            m1->NombreSecret('o', 'o');
+            break;
+        case '0':
+            cout <<"retour" << endl;
+            debut();
+            break;
+        case 'q':
+            cout <<"au revoir, a bientôt" << endl;
+            exit( EXIT_SUCCESS);
+            break;
+            
+        default:
+            cout <<"Vous pouvez utilisé soit q, 0, 1, 2, 3, 4, 5, 6" << endl;
+            AccueilNombreMystere();
+    }
+    int c = 0;
+    while (c == 0){
+        char choix1;
+        cout <<"voulez vous recommencer (o/n)" << endl;
+        scanf(" %c", &choix1);
+        
+        if ( choix1 == 'o'){
+            AccueilNombreMystere();
+            c = 1;
+        }
+        if (choix1 == 'n'){
+            cout <<"a bientot" << endl;
+            debut();
+            c = 1;
+            }
+    }
+}
+
 /*debut du menu*/
 void Menu::debut(){
     char choix;
@@ -155,7 +228,7 @@ void Menu::debut(){
     switch(choix){
         case '1':
             cout <<"Nombre Mystere" << endl;
-            /*AccueilNombreMystere();*/
+            AccueilNombreMystere();
             break;
         case '2':
             cout <<"Pierre Feuille Ciseau" << endl;

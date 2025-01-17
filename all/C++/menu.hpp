@@ -16,6 +16,9 @@ public:
     /*accueil Pierre Feuille Ciseau*/
     void AccueilPFC();
     
+    /*accueil du Nombre Mystere*/
+    void AccueilNombreMystere();
+    
     /*debut du menu*/
     void debut();
 
