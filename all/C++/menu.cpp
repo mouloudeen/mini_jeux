@@ -85,6 +85,64 @@ void Menu::AccueilPendu(){
 }
 
 
+/*accueil Pierre Feuille Ciseau*/
+void Menu::AccueilPFC(){
+    char choix;
+    
+    cout <<"1 : humain contre humain" << endl;
+    cout <<"2 : humain contre ordinateur" << endl;
+    cout <<"3 : ordinateur contre humain" << endl;
+    cout <<"4 : ordinateur contre ordinateur" << endl;
+    cout <<"0 : retour" << endl;
+    cout <<"q : quitter" << endl;
+    scanf("%c",&choix);
+    
+    Pfc *p1 = new Pfc();
+    
+    switch(choix){
+        case '1':
+            p1->pfc('h','h');
+            break;
+        case '2':
+            p1->pfc('h','o');
+            break;
+        case '3':
+            p1->pfc('o','h');
+            break;
+        case '4':
+            p1->pfc('o','o');
+            break;
+        case '0':
+            debut();
+            break;
+            
+        case 'q':
+            cout <<"au revoir, a bientôt" << endl;
+            exit( EXIT_SUCCESS);
+            break;
+            
+        default:
+            cout <<"Vous pouvez utilisé soit q, 0, 1, 2, 3, 4" << endl;
+            AccueilPFC();
+    }
+    int c = 0;
+    while (c == 0){
+        char choix1;
+        cout <<"voulez vous recommencer (o/n)" << endl;
+        scanf(" %c", &choix1);
+        
+        if ( choix1 == 'o'){
+            AccueilPFC();
+            c = 1;
+        }
+        if (choix1 == 'n'){
+            cout <<"a bientot" << endl;
+            debut();
+            c = 1;
+            }
+    }
+}
+
 /*debut du menu*/
 void Menu::debut(){
     char choix;
@@ -101,7 +159,7 @@ void Menu::debut(){
             break;
         case '2':
             cout <<"Pierre Feuille Ciseau" << endl;
-            /*AccueilPFC();*/
+            AccueilPFC();
             break;
             
         case '3':
