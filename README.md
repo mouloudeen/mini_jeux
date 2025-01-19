@@ -21,7 +21,7 @@ Le deuxième joueur est le joueur qui cherche le nombre secret peut être soit l
 
 - Si on choisit **h**, on nous demande de choisir un nombre entre le minimum et le maximum choisit précédemment.
 ![Capture d’écran 2025-01-19 à 16 11 52](https://github.com/user-attachments/assets/5908dbec-70f5-460e-970f-8e484cb508ca)
-<br>
+
 - Si on choisit **o** on passe directement à l'étape du choix du 2<sup>ème</sup> joueur.<br>
 _ On choisit le 2<sup>ème </sup> joueur entre l'ordinateur(**r**) , l'ordinateur heuristique (**o**) et l'être humain (**h**).
 
