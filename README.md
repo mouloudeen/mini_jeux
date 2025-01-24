@@ -81,7 +81,53 @@ Dans ce jeu, nous avons que:
   - 3<sup>ème</sup> possibilité: L'<b>Humain</b> contre l'<b>Ordinateur</b>. Le joueur contre l'ordinateur.
   - 4<sup>ème</sup> possibilité: L'<b>Humain</b> contre l'<b>Humain</b>. 2 joueurs jouent l'un contre l'autre.
     
+- Chaque joueur a 3 possibilités de jeu:
+  - <b>1 </b> représente la <b> Pierre </b>
+  - <b>2 </b> représente la <b> Feuille </b>
+  - <b>3 </b> représente les <b> Ciseaux </b>
+
+![j11](https://github.com/user-attachments/assets/1a4c9a1f-6003-446c-98fd-cace5f9e8efe)
+
+![j12](https://github.com/user-attachments/assets/db495439-1a4d-46a8-b318-14755e7223ff)
+
+![j13](https://github.com/user-attachments/assets/07dc063e-d8e2-4ec8-9855-95cad9552aef)
+
+![j21](https://github.com/user-attachments/assets/9a900a94-03ac-4dee-8ba2-5d0d9a379742)
+
+![j22](https://github.com/user-attachments/assets/a03f91b0-86d1-4367-a5bb-ea21f8f03dda)
+
+![j23](https://github.com/user-attachments/assets/7dd067ea-a2b9-46c2-a44d-73545be2c4b6)
+
+- On a 9 possibilités de messages:
+  
+  - ![Capture d’écran 2025-01-24 à 19 00 59](https://github.com/user-attachments/assets/fb881a30-9550-41eb-b200-0dcc63dcb693)
+  - ![Capture d’écran 2025-01-24 à 19 08 02](https://github.com/user-attachments/assets/926f5c39-b0e8-43db-bab2-f89a7447bc3d)
+  - ![Capture d’écran 2025-01-24 à 19 08 42](https://github.com/user-attachments/assets/c1faa499-c4ed-4361-9c71-3fa5dd4de0db)
+  - ![Capture d’écran 2025-01-24 à 19 11 08](https://github.com/user-attachments/assets/5925d9f5-1926-4b3c-817f-b98536d6eb89)
+  - ![Capture d’écran 2025-01-24 à 19 11 56](https://github.com/user-attachments/assets/716198c0-2a79-46ee-a255-c891b7129431)
+  - ![Capture d’écran 2025-01-24 à 19 26 19](https://github.com/user-attachments/assets/99af65e0-c882-49e0-ae42-a004cf639e98)
+  - ![Capture d’écran 2025-01-24 à 19 27 16](https://github.com/user-attachments/assets/3182a5d5-7ea7-4919-8ad1-0a858a37d91e)
+  - ![Capture d’écran 2025-01-24 à 19 27 52](https://github.com/user-attachments/assets/a687eb54-96ca-4a3f-99c2-7e0948b50dfc)
+  - ![Capture d’écran 2025-01-24 à 19 28 35](https://github.com/user-attachments/assets/ba355dbd-7459-4398-9142-82a3b75fda8a)
     
+Exemple d'une partie jeu entier:
+
+![Capture d’écran 2025-01-24 à 19 31 18](https://github.com/user-attachments/assets/5f68ced1-a0a2-4f51-bb12-e821b8159329)
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
 
 
 
