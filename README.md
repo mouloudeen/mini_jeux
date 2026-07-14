@@ -133,5 +133,64 @@ Exemple d'une partie jeu entier:
 
 
 <h2> <ins>  $${\color{green}Le Pendu}$$  </ins></h2>
+Le but du jeu est de deviner un mot secret, lettre par lettre, avant d'épuiser le nombre d'erreurs autorisées (10 erreurs possibles).<br>
+
+<h3> <ins>  $${\color{green}Choix de la longueur du mot}$$ </ins></h3>
+Le joueur choisit une longueur de mot (de 3 à 10 lettres, ou plus de 10 lettres). Chaque longueur correspond à une liste de mots prédéfinie intégrée dans le code (une centaine de mots par liste). Un mot est ensuite tiré au hasard dans la liste correspondante.
+
+<h3> <ins>  $${\color{green}Le déroulement du jeu}$$ </ins></h3>
+
+- Le mot à deviner s'affiche sous forme de tirets (`_ _ _`), un par lettre.
+- À chaque tour, on saisit soit une lettre, soit le mot entier.
+- Si la lettre est présente dans le mot, elle est révélée à la bonne position.
+- Si elle est absente, un essai est perdu et le dessin du pendu se complète progressivement (11 étapes, de 10 à 0 essais restants).
+- La partie se termine par une victoire (mot trouvé avant d'épuiser les essais) ou une défaite (le mot est révélé).
+
+Exemple de déroulement réel (partie testée en compilant et exécutant le code) :
+
+```
+le mot cherché est composé de 3 lettres 
+donner une lettre ou le mot exacte , il vous reste 10 erreurs possibles
+donner une lettre ou le mot exacte , il vous reste 9 erreurs possibles
+E__
+donner une lettre ou le mot exacte , il vous reste 7 erreurs possibles
+EC_
+...
+Vous avez perdu, le mot qui fallait trouver :  MAC
+```
+
+<h3> <ins>  $${\color{purple}Deux versions du jeu}$$ </ins></h3>
+
+- Le dossier `pendu/` contient une version autonome où la longueur du mot est demandée directement au clavier.
+- Le dossier `all/` contient la version intégrée au menu unifié, où la longueur est passée en paramètre depuis le menu.
 
 <h2> <ins>  $${\color{green}Le Mini-Jeux}$$ </ins></h2>
+Le dossier `all/` regroupe les trois jeux (Nombre Mystère, Pierre-Feuille-Ciseaux, Pendu) derrière un seul menu textuel, comme annoncé en introduction de ce README.
+
+<h3> <ins>  $${\color{green}Architecture}$$ </ins></h3>
+Chaque jeu garde sa propre classe (`Mystery`, `Pfc`, `Pendu_jeux`), reprise telle quelle depuis son dossier d'origine. Une classe `Menu` orchestre l'affichage des écrans et redirige vers le bon jeu selon le choix de l'utilisateur.
+
+<h3> <ins>  $${\color{green}Le déroulement du menu}$$ </ins></h3>
+
+- L'écran d'accueil propose les 3 jeux, plus l'option quitter (`q`).
+- Chaque jeu a son propre sous-menu de configuration (mode de jeu pour le Nombre Mystère et Pierre-Feuille-Ciseaux, longueur du mot pour le Pendu).
+- À la fin d'une partie, le programme demande de rejouer au même jeu (`o`/`n`) avant de revenir à l'écran d'accueil.
+
+Exemple de déroulement réel (partie testée en compilant et exécutant le code) :
+
+```
+1 : Nombre Mystere
+2 : Pierre Feuille Ciseau
+3 : Le Pendu
+q : quitter
+Le Pendu
+1 : 3 lettres 
+2 : 4 lettres
+...
+9 : plus de 10 lettres
+0 : retour
+q : quitter
+```
+
+<h3> <ins>  $${\color{purple}Limite connue}$$ </ins></h3>
+La saisie clavier utilise `scanf("%c", ...)` sans consommer les retours à la ligne restants dans le flux d'entrée. En usage interactif normal (au clavier), cela ne pose pas de problème. En revanche, si l'entrée standard est redirigée depuis un fichier ou un script (par exemple pour des tests automatisés) et que le flux se termine avant que le programme ne demande une nouvelle saisie, le programme reste bloqué à redemander indéfiniment "voulez vous recommencer (o/n)". Ce comportement a été constaté en testant le programme avec une entrée scriptée ; il n'affecte pas une utilisation normale au clavier.
