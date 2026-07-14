@@ -70,13 +70,3 @@ Jeu classique à 3 choix (1=Pierre, 2=Feuille, 3=Ciseaux), jouable en humain vs 
 
 ### Pendu
 Choix de la longueur du mot à deviner (de 3 à plus de 10 lettres), puis recherche lettre par lettre avec un nombre d'essais limité.
-
-## Limites connues (identifiées lors des tests)
-
-- **Version C, jeu Nombre Mystère / PFC** : le générateur aléatoire est réinitialisé (`srand(time(NULL))`) à chaque partie plutôt qu'une seule fois au démarrage. Sur des parties enchaînées rapidement (même seconde), l'ordinateur peut rejouer le même coup ou retomber sur le même nombre. Correction simple : appeler `srand(time(NULL))` une seule fois dans `main()`.
-- **Réponse "recommencer (o/n)"** : une entrée autre que `o`/`n` (ou un flux d'entrée vide) peut faire boucler le programme indéfiniment sur la même question, sans jamais relire de nouvelle entrée. À corriger si vous prévoyez une utilisation non interactive ou des tests automatisés.
-- Aucun test automatisé (unitaire ou d'intégration) n'est présent dans le dépôt à ce jour.
-
-## Langages utilisés
-
-D'après la répartition du dépôt : C (38%), C++ (35%), Python (25%), Makefile (2%).
